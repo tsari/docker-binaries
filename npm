@@ -1,2 +1,2 @@
 #!/bin/bash
-docker run --rm=true -i -t -v $PWD:/app tsari/node npm "$@"
+docker run --rm=true -i -t -v $PWD:/app -u="$UID" tsari/node npm "$@"

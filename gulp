@@ -1,2 +1,2 @@
 #!/bin/bash
-docker run --rm=true -i -t -v $PWD:/app tsari/node gulp "$@"
+docker run --rm=true -i -t -v $PWD:/app -u="$UID" tsari/node gulp "$@"
