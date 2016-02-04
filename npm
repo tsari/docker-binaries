@@ -1,4 +1,13 @@
 #!/bin/bash
 getent passwd > $HOME/.mypasswd && \
 getent group > $HOME/.mygroup && \
-sudo docker run --rm -it -v $PWD:/app -u $USER -v $HOME/.mypasswd:/etc/passwd:ro -v $HOME/.mygroup:/etc/group:ro tsari/node npm "$@"
+sudo docker run -it --rm \
+    --user=$USER \
+    --volume="/home/$USER:/home/$USER" \
+    --volume="$HOME/.mygroup:/etc/group:ro" \
+    --volume="$HOME/.mypasswd:/etc/passwd:ro" \
+    -v /etc/machine-id:/etc-machine-id:ro \
+    -v /etc/localtime:/etc/localtime:ro \
+    -v $PWD:/app \
+    -e "HOME=$HOME" \
+tsari/build-server npm "$@"

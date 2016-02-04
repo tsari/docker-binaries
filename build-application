@@ -10,4 +10,4 @@ sudo docker run -it --rm \
     -v /etc/localtime:/etc/localtime:ro \
     -v $PWD:/app \
     -e "HOME=$HOME" \
-tsari/build-server node "$@"
+tsari/build-server "$@"

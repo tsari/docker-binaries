@@ -14,7 +14,7 @@ Copy files into your ```$HOME/bin``` directory and make it executable (```chmod 
 - **docker-ip** - list ip's of all running containers
 - **docker-kill-all** - stop all running containers
 - **docker-clean-containers** - delete all stopped containers except "data" containers ("data" in container name)
-- **docker-ckean-images** - delete all images that aren't releated with existing containers
+- **docker-clean-images** - delete all images that aren't releated with existing containers
 - **filezilla** - [**filezilla-project.org**](https://filezilla-project.org/) - FTP Client
 - **heidisql** - [**heidisql.com**](http://www.heidisql.com/) - SQL Client for windows
 - **heidisql-vpn** - [**heidisql.com**](http://www.heidisql.com/) - SQL Client for windows. Runs and connects to ```vpn```.
