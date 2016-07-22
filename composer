@@ -1,14 +1,8 @@
 #!/bin/bash
-user=$USER
-uid=$(id -u)
-gid=$(id -g)
-sudo docker run -it --rm \
-    -e "USER=$user" \
-    -e "UID=$uid" \
-    -e "GID=$gid" \
-    -e "HOME=/home/$user" \
-    -v /home/$user:/home/$user \
-    -v /etc/machine-id:/etc-machine-id:ro \
-    -v /etc/localtime:/etc/localtime:ro \
+docker run -it --rm \
+    --name composer \
+    --env="USER" \
+    --env="UID=$(id -u)" \
+    --env="GID=$(id -g)" \
     -v $PWD:/app \
-tsari/build-server composer "$@"
+tsari/composer "$@"
