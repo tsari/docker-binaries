@@ -8,4 +8,5 @@ docker run -it --rm \
     -v /etc/machine-id:/etc-machine-id:ro \
     -v /etc/localtime:/etc/localtime:ro \
     -v $PWD:/app \
+    --net="host" \
 tsari/build-server composer "$@"
