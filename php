@@ -7,6 +7,7 @@ docker run -it --rm \
     -v /home/$USER:/home/$USER \
     -v /etc/machine-id:/etc-machine-id:ro \
     -v /etc/localtime:/etc/localtime:ro \
-    -v $PWD:/app \
+    -v $PWD:$PWD \
+    -w $PWD \
     --net="host" \
 tsari/build-server php "$@"
